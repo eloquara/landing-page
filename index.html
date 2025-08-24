@@ -17,138 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+  <link rel="stylesheet" href="style.css">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Global */
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: #0c0038;
-      color: #F5F5F5;
-      line-height: 1.7;
-    }
-    h1, h2, h3, h4 {
-      font-family: 'Cinzel', serif;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      color: #FFD700;
-    }
-    header, section, footer {
-      padding: 3rem 2rem;
-    }
-    section {
-      
-    }
-    section:nth-of-type(even) {
-      background: #0c0038;
-    }
-
-    section + section {
-      border-top: 1px solid #FFD700;
-    }
-
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #0a002d;
-      color: #F5F5F5;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      border-bottom: 1px solid #FFD700;
-    }
-    nav a {
-      color: #F5F5F5;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #FFD700;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .brand-name {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #FFD700;
-    }
-
-    .nav-links {
-      display: flex;
-    }
-
-    .hamburger-menu {
-      display: none;
-      cursor: pointer;
-    }
-
-    @media screen and (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #0c0038;
-        padding: 1rem 0;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hamburger-menu {
-        display: block;
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-text {
-        margin-bottom: 2rem;
-      }
-
-      .two-col {
-        flex-direction: column;
-      }
-
-      .contact-form {
-        max-width: 100%;
-        padding: 0 2rem;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .email, .phone, .copyright, .back-to-top {
-        display: block;
-      }
-    }
-
     /* Hero */
     .hero {
       display: flex;
@@ -177,34 +47,6 @@
       border-radius: 15px;
       margin-top: 1rem;
     }
-
-    /* CTA Buttons */
-    .cta-btn {
-      display: inline-block;
-      background: #FFD700;
-      color: #0c0038;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .cta-btn:hover {
-      background: #E1B84D;
-      transform: translateY(-3px);
-    }
-
-    /* Section defaults */
-    .section {
-      text-align: center;
-      margin: 0;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    
 
     /* Impact cards */
     .impact {
@@ -267,66 +109,6 @@
       max-width: 320px;
       border-radius: 15px;
     }
-
-    /* Contact form */
-    .contact-form {
-      max-width: 650px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1.2rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #0c0038;
-      color: #F5F5F5;
-    }
-    .contact-form button {
-      display: block;
-      margin: 0 auto;
-      background: #FFD700;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-weight: 600;
-      color: #0c0038;
-      cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    .contact-form button:hover {
-      background: #E1B84D;
-    }
-
-    /* Footer */
-    footer {
-      background: #0a002d;
-      color: #f8f9fa;
-      text-align: center;
-      padding: 3rem 2rem;
-      border-top: 1px solid #FFD700;
-    }
-    footer a {
-      color: #FFD700;
-      text-decoration: none;
-    }
-
-    .social-media {
-      margin-top: 1.5rem;
-    }
-
-    .social-media a {
-      color: #FFD700;
-      margin: 0 1rem;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .social-media a:hover {
-      color: #F5F5F5;
-    }
   </style>
 </head>
 <body>
@@ -367,8 +149,8 @@
             <div className="hero-text">
               <h1>Where Knowledge Becomes Influence</h1>
               <p>Empowering individuals, leaders, and organizations to transform knowledge into influence through the power of effective communication.</p>
-              <a href="#programs" className="cta-btn">Start Your Journey</a>
-              <a href="#programs" className="cta-btn">Build Your Team</a>
+              <a href="journey.html" className="cta-btn">Start Your Journey</a>
+              <a href="build-team.html" className="cta-btn">Build Your Team</a>
             </div>
             <img src="hero.png" alt="Founder or Training Scene" />
           </section>
@@ -383,7 +165,7 @@
           <section className="section" data-aos="fade-up">
             <h2>Our Impact</h2>
             <div className="impact">
-              <div>
+              <div onClick={() => window.location.href='individual-transformation.html'} style={{cursor: 'pointer'}}>
                 <i className="fas fa-user-graduate"></i>
                 <h3>Individual Transformation</h3>
                 <ul>
@@ -392,7 +174,7 @@
                   <li>Learn how your words shape reality</li>
                 </ul>
               </div>
-              <div>
+              <div onClick={() => window.location.href='organisational-growth.html'} style={{cursor: 'pointer'}}>
                 <i className="fas fa-users"></i>
                 <h3>Organizational Growth</h3>
                 <ul>
@@ -401,7 +183,7 @@
                   <li>Create success-driven cultures</li>
                 </ul>
               </div>
-              <div>
+              <div onClick={() => window.location.href='societal-impact.html'} style={{cursor: 'pointer'}}>
                 <i className="fas fa-globe"></i>
                 <h3>Societal Impact</h3>
                 <ul>
@@ -416,7 +198,7 @@
           {/* Process */}
           <section className="section" data-aos="fade-up">
             <h2>Our Process</h2>
-            <p>Discover → Design → Deliver → Reflect</p>
+            <img src="our_process.png" alt="Our Process: Discover, Design, Deliver, Reflect" style={{ maxWidth: '700px', width: '100%' }} />
           </section>
 
           {/* About Us */}
@@ -446,25 +228,25 @@
                 <i className="fas fa-user-tie"></i>
                 <h3>Executive Communication Coaching</h3>
                 <p>One-on-one coaching designed to help leaders refine their communication skills, enhance their influence, and inspire their teams.</p>
-                <a href="#" className="cta-btn">Learn More</a>
+                <a href="executive-coaching.html" className="cta-btn">Learn More</a>
               </div>
               <div>
                 <i className="fas fa-users-cog"></i>
                 <h3>Team Communication Workshops</h3>
                 <p>Interactive workshops that empower teams to communicate more effectively, fostering collaboration, and driving collective success.</p>
-                <a href="#" className="cta-btn">Explore Workshops</a>
+                <a href="team-communication-workshops.html" className="cta-btn">Explore Workshops</a>
               </div>
               <div>
                 <i className="fas fa-microphone-alt"></i>
                 <h3>Public Speaking Mastery</h3>
                 <p>A comprehensive course designed to help you conquer your fear of public speaking and deliver presentations with confidence and impact.</p>
-                <a href="#" className="cta-btn">Join the Course</a>
+                <a href="public-speaking-mastery.html" className="cta-btn">Join the Course</a>
               </div>
               <div>
                 <i className="fas fa-cogs"></i>
                 <h3>Customized Training Programs</h3>
                 <p>We offer tailored training programs to meet the specific needs of your organization, focusing on areas such as leadership communication, conflict resolution, and more.</p>
-                <a href="#contact" className="cta-btn">Request a Consultation</a>
+                <a href="customized-training-programs.html" className="cta-btn">Request a Consultation</a>
               </div>
             </div>
           </section>

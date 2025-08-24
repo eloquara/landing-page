@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Communication Workshops - Eloqaura</title>
+  <link rel="icon" href="logo.png" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .workshop-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .workshop-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .workshop-header h1 {
+      font-size: 3rem;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+    .workshop-header p {
+      font-size: 1.5rem;
+      color: #FFD700;
+    }
+    .workshops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .workshop-card {
+      background-color: #001428;
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .workshop-card.highlight {
+      background-color: #FFD700;
+      color: #001428;
+    }
+    .workshop-card h3 {
+      color: #FFFFFF;
+    }
+    .workshop-card.highlight h3, .workshop-card.highlight p {
+      color: #001428;
+    }
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      background-color: #001428;
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .before-after h3 {
+      color: #FFFFFF;
+    }
+    .before-after ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .before-after li {
+      margin-bottom: 0.5rem;
+    }
+    .workshop-footer {
+      text-align: center;
+    }
+    .workshop-footer .cta-btn {
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const App = () => {
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+      const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      };
+
+      return (
+        <>
+          {/* Navigation */}
+          <nav>
+            <div className="brand">
+              <a href="index.html">
+                <img src="logo.png" alt="Eloqaura Logo" style={{ width: "55px", height: "55px" }} />
+              </a>
+              <p className="brand-name">ELOQAURA</p>
+            </div>
+            <div>
+              <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+              </div>
+              <div className="hamburger-menu" onClick={toggleMobileMenu}>
+                <i className="fas fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+
+          <section>
+            <div className="workshop-container">
+              <div className="workshop-header">
+                <h1>Team Communication Workshops</h1>
+                <p>Where collaboration turns into performance.</p>
+              </div>
+
+              <div className="workshops-grid">
+                <div className="workshop-card">
+                  <h3>The Listening Lab™</h3>
+                  <p>Experiential drills to enhance active listening, and acknowledgment.</p>
+                </div>
+                <div className="workshop-card">
+                  <h3>Conflict to Collaboration™</h3>
+                  <p>Turn disagreements into creativity, alignment.</p>
+                </div>
+                <div className="workshop-card">
+                  <h3>Signals & Stories™</h3>
+                  <p>Learn to build trust and aligned that guide cutine.</p>
+                </div>
+                <div className="workshop-card">
+                  <h3>Decision-Making Dialogues</h3>
+                  <p>Tools for clear conversations that drive outcomes</p>
+                </div>
+                <div className="workshop-card highlight">
+                  <h3>The Clarity Sprint™</h3>
+                  <p>Practice cutting through complexity to achieve results.</p>
+                </div>
+              </div>
+
+              <div className="before-after">
+                <div>
+                  <h3>Before</h3>
+                  <ul>
+                    <li>• Misunderstandings that waste time</li>
+                    <li>• Conflicts that divide</li>
+                    <li>• Meetings that drain energy</li>
+                    <li>• Decisions delayed by unclear dialogue.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>After</h3>
+                  <ul>
+                    <li>• Shared language of trust and respect</li>
+                    <li>• Healthy debates that drive better ideas</li>
+                    <li>• Meetings that inspire and align</li>
+                    <li>• Decisions made faster, with confidence</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="workshop-footer">
+                 <a href="#" className="cta-btn">Strengthen Your Team's Voice</a>
+                 <a href="#" className="cta-btn secondary">See a Sample Simulation in Action</a>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer id="contact">
+            <h2>Contact Us</h2>
+            <div className="contact-form">
+              <form>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your Email" />
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+            <p><span className="email">Email: kiranlingaraj@eloqaura.com</span> | <span className="phone">Phone: +91 78240 05002</span></p>
+            <div className="social-media">
+              <a href="#"><i className="fab fa-twitter"></i></a>
+              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#"><i className="fab fa-facebook-f"></i></a>
+            </div>
+            <p><span className="copyright">&copy; {new Date().getFullYear()} Eloqaura Communication Training</span> | <span className="back-to-top"><a href="#home">Back to Top</a></span></p>
+          </footer>
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

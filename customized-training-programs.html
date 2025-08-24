@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customized Training Programs - Eloqaura</title>
+  <link rel="icon" href="logo.png" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .custom-training-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .custom-training-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .custom-training-header h1 {
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+    }
+    .custom-training-header p {
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .custom-training-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .custom-training-card {
+      background-color: #001428;
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .custom-training-card h3 {
+      color: #FFFFFF;
+      font-size: 1.3rem;
+    }
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      background-color: #001428;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .before-after h3 {
+      color: #FFFFFF;
+    }
+    .before-after ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .before-after li {
+      margin-bottom: 0.5rem;
+    }
+    .custom-training-footer {
+      text-align: center;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+    .footer-item p {
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const App = () => {
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+      const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      };
+
+      return (
+        <>
+          {/* Navigation */}
+          <nav>
+            <div className="brand">
+              <a href="index.html">
+                <img src="logo.png" alt="Eloqaura Logo" style={{ width: "55px", height: "55px" }} />
+              </a>
+              <p className="brand-name">ELOQAURA</p>
+            </div>
+            <div>
+              <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+              </div>
+              <div className="hamburger-menu" onClick={toggleMobileMenu}>
+                <i className="fas fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+
+          <section>
+            <div className="custom-training-container">
+              <div className="custom-training-header">
+                <h1>Your goals. Your culture. Your unique path to impact</h1>
+                <p>No two teams are the same. That’s why we design training that’s as unique as your challenges.</p>
+              </div>
+
+              <div className="custom-training-grid">
+                <div className="custom-training-card">
+                  <h3>Needs Discovery Sprint™</h3>
+                  <p>In-depth-diagnostics, including surveys, interviews, and shadowing to uncover your exact needs</p>
+                </div>
+                <div className="custom-training-card">
+                  <h3>Tailored Curriculum Design™</h3>
+                  <p>Adapted Frameworks. and content aligned to your org-edication's janguage, culture, and strategy</p>
+                </div>
+                <div className="custom-training-card">
+                  <h3>Immersive Delivery Models™</h3>
+                  <p>Choose from workshops, simulations, eigiti-linodules, retreats, or blended programs</p>
+                </div>
+                <div className="custom-training-card">
+                  <h3>Impact Mapping™</h3>
+                  <p>Define success metric's and track progress at ainst KJO's to ensure.fon</p>
+                </div>
+              </div>
+
+              <div className="before-after">
+                <div>
+                  <h3>Before</h3>
+                  <ul>
+                    <li>• Generic training that fails to stick</li>
+                    <li>• Employees disengaged in sessions</li>
+                    <li>• Skills that don’t transfer to real work</li>
+                    <li>• ROI that’s hard to measure</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>After</h3>
+                  <ul>
+                    <li>• Training built around your reality</li>
+                    <li>• Engaged participants who see immediate value</li>
+                    <li>• Skills embedded into daily work</li>
+                    <li>• Clear, measurable impact tied to outcomes</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="custom-training-footer">
+                <div className="footer-grid">
+                  <div className="footer-item">
+                    <p>Scenario Libraries</p>
+                  </div>
+                  <div className="footer-item">
+                    <p>Custom Roleplays</p>
+                  </div>
+                  <div className="footer-item">
+                    <p>Hybrid Flex Delivery</p>
+                  </div>
+                  <div className="footer-item">
+                    <p>Co-Design Labs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer id="contact">
+            <h2>Contact Us</h2>
+            <div className="contact-form">
+              <form>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your Email" />
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+            <p><span className="email">Email: kiranlingaraj@eloqaura.com</span> | <span className="phone">Phone: +91 78240 05002</span></p>
+            <div className="social-media">
+              <a href="#"><i className="fab fa-twitter"></i></a>
+              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#"><i className="fab fa-facebook-f"></i></a>
+            </div>
+            <p><span className="copyright">&copy; {new Date().getFullYear()} Eloqaura Communication Training</span> | <span className="back-to-top"><a href="#home">Back to Top</a></span></p>
+          </footer>
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

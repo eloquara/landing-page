@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Individual Transformation - Eloqaura</title>
+  <link rel="icon" href="logo.png" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .transformation-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .transformation-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .transformation-header h1 {
+      font-size: 3rem;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+    .transformation-header p {
+      font-size: 1.5rem;
+      color: #FFD700;
+    }
+    .content-box {
+      background-color: #001428;
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .intro-text {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .comparison-container {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .before-box, .after-box {
+      padding: 1.5rem;
+    }
+    .after-box {
+      background-color: #FFD700;
+      border-radius: 10px;
+    }
+    .after-box h3, .after-box li {
+      color: #001428;
+    }
+    .comparison-container h3 {
+      color: #FFFFFF;
+    }
+    .comparison-container ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .comparison-container li {
+      margin-bottom: 0.5rem;
+    }
+    .arrow {
+      font-size: 2.5em;
+      color: #FFD700;
+      text-align: center;
+    }
+    .outcomes h3 {
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .outcomes ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .outcomes li {
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .outcomes li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #FFD700;
+    }
+    .transformation-footer {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const App = () => {
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+      const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      };
+
+      return (
+        <>
+          {/* Navigation */}
+          <nav>
+            <div className="brand">
+              <a href="index.html">
+                <img src="logo.png" alt="Eloqaura Logo" style={{ width: "55px", height: "55px" }} />
+              </a>
+              <p className="brand-name">ELOQAURA</p>
+            </div>
+            <div>
+              <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+              </div>
+              <div className="hamburger-menu" onClick={toggleMobileMenu}>
+                <i className="fas fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+
+          <section>
+            <div className="transformation-container">
+              <div className="transformation-header">
+                <h1>Individual Transformation</h1>
+                <p>Because when one person transforms, everything around them changes.</p>
+              </div>
+
+              <div className="content-box">
+                <p className="intro-text">Every individual carries a story, a message, a spark—yet too often it remains unheard. At Eloqaura, we help people move from hesitation to influence, from self-doubt to clarity, and from silence to impact.</p>
+                <div className="comparison-container">
+                  <div className="before-box">
+                    <h3>Before</h3>
+                    <ul>
+                      <li>• Struggling to express ideas</li>
+                      <li>• Overlooked in meetings</li>
+                      <li>• Lacking confidence in high-pressure situations</li>
+                    </ul>
+                  </div>
+                  <div className="arrow">→</div>
+                  <div className="after-box">
+                    <h3>After</h3>
+                    <ul>
+                      <li>• Speaking with conviction</li>
+                      <li>• Influencing decisions</li>
+                      <li>• Recognized as a trusted voice of clarity</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="outcomes">
+                  <h3>Impact Stories / Outcomes:</h3>
+                  <ul>
+                    <li>A frontline employee who once feared presentations now confidently drives daily huddles, inspiring their team.</li>
+                    <li>A young professional who felt invisible in client discussions now leads pitches with clarity and wins trust.</li>
+                    <li>An executive facing critical negotiations shifted from defensive reactions to empathetic, outcome-driven dialogue—changing the deal's trajectory.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="transformation-footer">
+                 <a href="#" className="cta-btn">Find Your Voice – Begin Your Transformation</a>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer id="contact">
+            <h2>Contact Us</h2>
+            <div className="contact-form">
+              <form>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your Email" />
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+            <p><span className="email">Email: kiranlingaraj@eloqaura.com</span> | <span className="phone">Phone: +91 78240 05002</span></p>
+            <div className="social-media">
+              <a href="#"><i className="fab fa-twitter"></i></a>
+              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#"><i className="fab fa-facebook-f"></i></a>
+            </div>
+            <p><span className="copyright">&copy; {new Date().getFullYear()} Eloqaura Communication Training</span> | <span className="back-to-top"><a href="#home">Back to Top</a></span></p>
+          </footer>
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
