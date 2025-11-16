@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarity in Action - Eloqaura</title>
+  <link rel="icon" href="logo.png" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0c0038;
+      color: #FFFFFF;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .main-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .main-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .main-header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: #FFD700;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .main-header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #FFD700;
+    }
+    .experience-section {
+      margin-bottom: 3rem;
+    }
+    .experience-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .experience-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+    .experience-list li {
+      display: flex;
+      align-items: flex-start;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .experience-list i {
+      color: #FFD700;
+      margin-right: 1rem;
+      margin-top: 4px;
+    }
+    .comparison-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+    .column h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 1.5rem;
+    }
+    .column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .column li {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #F5F5F5;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .column li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #FFD700;
+    }
+    .column .highlight {
+      color: #FFD700;
+    }
+    .impact-story {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      border: 1px solid #FFD700;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      background-color: #FFD700;
+      color: #0c0038;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .cta-btn:hover {
+      background-color: transparent;
+      color: #FFD700;
+      box-shadow: 0 0 15px #FFD700;
+      border-color: #FFD700;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const App = () => {
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+      const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      };
+
+      return (
+        <>
+          {/* Navigation */}
+          <nav>
+            <div className="brand">
+              <a href="index.html">
+                <img src="logo.png" alt="Eloqaura Logo" style={{ width: '55px', height: '55px' }} />
+              </a>
+              <p className="brand-name">ELOQAURA</p>
+            </div>
+            <div>
+              <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+              </div>
+              <div className="hamburger-menu" onClick={toggleMobileMenu}>
+                <i className="fas fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+
+          <div className="main-container">
+            <div className="main-header">
+              <h1>CLARITY IN ACTION™</h1>
+              <h2>Simplify complexity. Sharpen your message. Drive decisions.</h2>
+            </div>
+
+            <div className="experience-section">
+              <h3>WHAT YOU'LL EXPERIENCE</h3>
+              <ul className="experience-list">
+                <li><i className="fas fa-check"></i><span><strong>Message Distillation™</strong> – Learn to strip away jargon and reduce complex ideas to their essence.</span></li>
+                <li><i className="fas fa-random"></i><span><strong>Decision Clarity Framework™</strong> – Techniques to communicate options, risks, and outcomes with precision.</span></li>
+                <li><i className="fas fa-stopwatch"></i><span><strong>The 90-Second Pitch Drill™</strong> – Practice delivering compelling clarity in time-pressured settings.</span></li>
+                <li><i className="fas fa-sync-alt"></i><span><strong>Clarity Feedback Loops</strong> – Peer and coach reflections on whether your message truly lands.</span></li>
+              </ul>
+            </div>
+
+            <div className="comparison-section">
+              <div className="column">
+                <h3>BEFORE</h3>
+                <ul>
+                  <li>Long-winded explanations that confuse audiences</li>
+                  <li>Critical points buried in details</li>
+                  <li>Decisions delayed by lack of clarity</li>
+                  <li>Audiences disengaged or lost</li>
+                </ul>
+              </div>
+              <div className="column">
+                <h3>AFTER</h3>
+                <ul>
+                  <li>Concise, focused communication <span className="highlight">that cuts through noise</span></li>
+                  <li>Faster decision-making <span className="highlight">(from aligned understanding)</span></li>
+                  <li>Audiences engaged, confident, <span className="highlight">and mobilised</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="impact-story">
+              <strong>Impact Story:</strong> A leader once known for overloading presentations with detail mastered Clarity in Action™. Today, their concise, story-driven updates help senior stakeholders make swift, confident decisions.
+            </p>
+
+            <div className="cta-buttons">
+                <a href="#" className="cta-btn">Put Clarity Into Action – Book a Coaching Session</a>
+                <a href="executive-coaching.html" className="cta-btn">Explore All Coaching Tracks</a>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <footer id="contact">
+            <h2>Contact Us</h2>
+            <div className="contact-form">
+              <form>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your Email" />
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+            <p><span className="email">Email: kiranlingaraj@eloqaura.com</span> | <span className="phone">Phone: +91 78240 05002</span></p>
+            <div className="social-media">
+              <a href="#"><i className="fab fa-twitter"></i></a>
+              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#"><i className="fab fa-facebook-f"></i></a>
+            </div>
+            <p><span className="copyright">&copy; {new Date().getFullYear()} Eloqaura Communication Training</span> | <span className="back-to-top"><a href="#home">Back to Top</a></span></p>
+          </footer>
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Executive Communication Coaching - Eloqaura</title>
+  <title>Influence Under Pressure - Eloqaura</title>
   <link rel="icon" href="logo.png" />
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -18,67 +18,81 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css">
   <style>
-    .coaching-container {
+    body {
+      background-color: #0c0038;
+      color: #FFFFFF;
+    }
+    .main-container {
       max-width: 950px;
       margin: 0 auto;
+      padding: 2rem;
       text-align: center;
     }
-    .coaching-header {
-      margin-bottom: 3rem;
-    }
-    .coaching-header h1 {
+    .main-header h1 {
+      font-family: 'Cinzel', serif;
       font-size: 3rem;
-      color: #FFFFFF;
+      color: #FFD700;
       margin-bottom: 1rem;
     }
-    .coaching-header h2 {
+    .main-header h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 3rem;
+    }
+    .experience-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 2rem;
+    }
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+    .experience-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .experience-icon {
+      border: 1px solid #FFD700;
+      padding: 0.8rem;
+      border-radius: 5px;
       font-size: 1.5rem;
       color: #FFD700;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 400;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .cards-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-    .card {
-      background-color: #001428;
-      border: 1px solid #FFD700;
-      border-radius: 10px;
-      padding: 2rem;
-    }
-    .card-icon {
-      font-size: 2.5rem;
-      color: #FFD700;
-      margin-bottom: 1rem;
-    }
-    .card h3 {
+    .experience-content h4 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.3rem;
-      color: #FFFFFF;
+      margin-bottom: 0.5rem;
     }
     .comparison-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
-      background-color: #001428;
-      border: 1px solid #FFD700;
-      border-radius: 10px;
-      padding: 2rem;
       margin-bottom: 3rem;
       text-align: left;
     }
     .column h3 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.2rem;
+      text-transform: uppercase;
       color: #FFD700;
       margin-bottom: 1rem;
-      text-transform: uppercase;
     }
     .column ul {
       list-style: none;
       padding: 0;
-      font-size: 1.1rem;
     }
     .column li {
       margin-bottom: 1rem;
@@ -91,21 +105,12 @@
       left: 0;
       color: #FFD700;
     }
-    .features-section {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 1.1rem;
-    }
-    .feature-item i {
-      font-size: 1.8rem;
-      color: #FFD700;
+    .testimonial-box {
+      border: 1px solid #FFD700;
+      padding: 2rem;
+      border-radius: 10px;
+      font-style: italic;
+      background-color: #0c0038;
     }
   </style>
 </head>
@@ -144,70 +149,71 @@
             </div>
           </nav>
 
-          <section>
-            <div className="coaching-container">
-              <div className="coaching-header">
-                <h1>Executive Communication Coaching</h1>
-                <h2>Where clarity, presence, and influence converge.</h2>
-              </div>
-              <div className="cards-section">
-                <a href="influence-under-pressure.html" style={{textDecoration: 'none', color: 'inherit'}}>
-                  <div className="card">
-                    <div className="card-icon"><i className="fas fa-bullseye"></i></div>
-                    <h3>Influence Under Pressure™</h3>
-                    <p>Master high-stakes communication for crises, negotiations, and boardroom challenges</p>
+          <div className="main-container">
+            <div className="main-header">
+              <h1>INFLUENCE UNDER PRESSURE™</h1>
+              <h2>Stay calm, clear, and convincing when the stakes are highest.</h2>
+            </div>
+
+            <div className="experience-section">
+              <h3>WHAT YOU'LL EXPERIENCE</h3>
+              <div className="experience-grid">
+                <div className="experience-item">
+                  <div className="experience-icon"><i className="fas fa-user-secret"></i></div>
+                  <div className="experience-content">
+                    <h4>Crisis Simulations</h4>
+                    <p>Mock press briefings, investor calls, and hostile Q&As that test real-time composure</p>
                   </div>
-                </a>
-                <a href="leadership-presence-lab.html" style={{textDecoration: 'none', color: 'inherit'}}>
-                  <div className="card">
-                    <div className="card-icon"><i className="fas fa-user-tie"></i></div>
-                    <h3>Leadership Presence Lab™</h3>
-                    <p>Craft gravitas, charisma, and clarity that command trust and respect</p>
-                  </div>
-                </a>
-                <a href="power-vulnerability-matrix.html" style={{textDecoration: 'none', color: 'inherit'}}>
-                  <div className="card">
-                    <div className="card-icon"><i className="fas fa-balance-scale"></i></div>
-                    <h3>Power–Vulnerability Matrix™</h3>
-                    <p>Find your unique balance of authority and empathy as a leader</p>
-                  </div>
-                </a>
-                <a href="clarity-in-action.html" style={{textDecoration: 'none', color: 'inherit'}}>
-                  <div className="card">
-                    <div className="card-icon"><i className="fas fa-lightbulb"></i></div>
-                    <h3>Clarity in Action</h3>
-                    <p>Simplify complexity, sharpen your message, and drive decisions</p>
-                  </div>
-                </a>
-              </div>
-              <div className="comparison-section">
-                <div className="column">
-                  <h3>BEFORE</h3>
-                  <ul>
-                    <li>Overwhelmed by pressure</li>
-                    <li>Messages lost in complexity</li>
-                    <li>Presence undercut by nerves</li>
-                    <li>Authority without connection</li>
-                  </ul>
                 </div>
-                <div className="column">
-                  <h3>AFTER</h3>
-                  <ul>
-                    <li>Speaking with conviction, even in crises</li>
-                    <li>Messages that cut through noise</li>
-                    <li>Confident presence that inspires trust</li>
-                    <li>Authority balanced with empathy</li>
-                  </ul>
+                <div className="experience-item">
+                  <div className="experience-icon"><i className="fas fa-chess-board"></i></div>
+                  <div className="experience-content">
+                    <h4>Boardroom Battle Drills</h4>
+                    <p>Roleplay high-stakes decisions where clarity and confidence sway outcomes</p>
+                  </div>
                 </div>
-              </div>
-              <div className="features-section">
-                <div className="feature-item"><i className="fas fa-file-alt"></i> High-Stakes Simulations</div>
-                <div className="feature-item"><i className="fas fa-fingerprint"></i> Executive Communication Fingerprint™</div>
-                <div className="feature-item"><i className="fas fa-sync-alt"></i> 360° Influence Feedback</div>
-                <div className="feature-item"><i className="fas fa-phone"></i> Confidential Executive Hotline</div>
+                <div className="experience-item">
+                  <div className="experience-icon"><i className="fas fa-fire-extinguisher"></i></div>
+                  <div className="experience-content">
+                    <h4>Message Under Fire™ Framework</h4>
+                    <p>Learn to simplify, prioritize, and deliver your message under intense scrutiny</p>
+                  </div>
+                </div>
+                <div className="experience-item">
+                  <div className="experience-icon"><i className="fas fa-hand-holding-heart"></i></div>
+                  <div className="experience-content">
+                    <h4>Pressure Presence Coaching</h4>
+                    <p>Techniques to regulate nerves, manage tone, and use body language strategically</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </section>
+
+            <div className="comparison-section">
+              <div className="column">
+                <h3>BEFORE</h3>
+                <ul>
+                  <li>Reactive, defensive responses</li>
+                  <li>Messages lost under stress</li>
+                  <li>Visible nerves undermining authority</li>
+                  <li>Difficulty influencing tough stakeholders</li>
+                </ul>
+              </div>
+              <div className="column">
+                <h3>AFTER</h3>
+                <ul>
+                  <li>Composed, centered, and strategic under fire</li>
+                  <li>Clear messages that drive decisions</li>
+                  <li>Confidence that reassures teams and stakeholders</li>
+                  <li>Authority balanced with empathy, even in conflict</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="testimonial-box">
+              <p>A senior executive facing a hostile media panel walked away not just intact — but admired. By applying Influence Under Pressure™, they shifted the conversation from blame to vision, regaining trust for the organization.</p>
+            </div>
+          </div>
 
           {/* Footer */}
           <footer id="contact">

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decision-Making Dialogues - Eloqaura</title>
+  <link rel="icon" href="logo.png" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0c0038;
+      color: #FFFFFF;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .main-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .main-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .main-header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: #FFD700;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .main-header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #FFD700;
+    }
+    .top-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    .quadrant-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        border: 1px solid #FFD700;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .quadrant-item {
+        padding: 1.5rem;
+        text-align: center;
+        border-right: 1px solid #FFD700;
+        border-bottom: 1px solid #FFD700;
+    }
+    .quadrant-item:nth-child(2n) {
+        border-right: none;
+    }
+    .quadrant-item:nth-child(3), .quadrant-item:nth-child(4) {
+        border-bottom: none;
+    }
+    .quadrant-item i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #FFD700;
+    }
+    .before-after-column {
+        border: 1px solid #FFD700;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+    .before-after-column h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 1.5rem;
+    }
+    .before-after-column ul {
+        list-style: none;
+        padding: 0;
+    }
+    .before-after-column li {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .bottom-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    .bottom-column ul {
+        list-style: none;
+        padding: 0;
+    }
+    .bottom-column li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .bottom-column li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #FFD700;
+    }
+    .impact-story h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    .experiential-edge ul {
+        list-style: none;
+        padding: 0;
+    }
+     .experiential-edge li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+     }
+    .experiential-edge i {
+        margin-right: 1rem;
+        color: #FFD700;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      border: 1px solid #FFD700;
+      padding: 1rem;
+      border-radius: 5px;
+      background-color: #FFD700;
+      color: #0c0038;
+      text-decoration: none;
+      font-size: 1.1rem;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .cta-btn:hover {
+      background-color: transparent;
+      color: #FFD700;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const App = () => {
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+      const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      };
+
+      return (
+        <>
+          {/* Navigation */}
+          <nav>
+            <div className="brand">
+              <a href="index.html">
+                <img src="logo.png" alt="Eloqaura Logo" style={{ width: '55px', height: '55px' }} />
+              </a>
+              <p className="brand-name">ELOQAURA</p>
+            </div>
+            <div>
+              <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+              </div>
+              <div className="hamburger-menu" onClick={toggleMobileMenu}>
+                <i className="fas fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+
+          <div className="main-container">
+            <div className="main-header">
+              <h1>DECISION-MAKING DIALOGUES™</h1>
+              <h2>Cut through the noise. Drive decisions with clarity, speed, and confidence.</h2>
+            </div>
+
+            <div className="top-grid">
+              <div className="quadrant-grid">
+                <div className="quadrant-item"><i className="fas fa-lightbulb"></i><p>Decision Clarity Framework™</p></div>
+                <div className="quadrant-item"><i className="fas fa-bullseye"></i><p>The 3-Question Drill™</p></div>
+                <div className="quadrant-item"><i className="fas fa-tasks"></i><p>Priority Alignment Games™</p></div>
+                <div className="quadrant-item"><i className="fas fa-check-double"></i><p>Action Commit Cards™</p></div>
+              </div>
+              <div className="before-after-column">
+                <h3>BEFORE → AFTER</h3>
+                <ul>
+                  <li>Focused, structured dialogues that accelerate clarity</li>
+                  <li>Decisions made once, with confidence</li>
+                  <li>Clear ownership and accountability</li>
+                  <li>Meetings that energise and align teams</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bottom-section">
+                <div className="bottom-column">
+                    <h3>BEFORE</h3>
+                    <ul>
+                        <li>Endless debates with no resolution</li>
+                        <li>Decisions delayed or revisited repeatedly</li>
+                        <li>Lack of ownership for outcomes</li>
+                        <li>Meetings that drain energy instead of moving forward</li>
+                    </ul>
+                </div>
+                <div className="bottom-column impact-story">
+                    <h3>IMPACT STORY</h3>
+                    <p>A leadership team repeatedly delayed product launch decisions due to unclear priorities. After Decision-Making Dialogues™, they adopted the 3-Question Drill™ — and made aligned decisions in half the time, with greater confidence from all stakeholders.</p>
+                </div>
+            </div>
+
+            <div className="experiential-edge">
+                <h3>EXPERIENTIAL EDGE</h3>
+                <div className="bottom-section">
+                    <div className="bottom-column">
+                        <ul>
+                            <li><i className="fas fa-fire"></i> Rapid-Fire Dialogues</li>
+                            <li><i className="fas fa-map-signs"></i> Consensus Mapping Boards</li>
+                        </ul>
+                    </div>
+                    <div className="bottom-column">
+                        <ul>
+                            <li><i className="fas fa-users"></i> Role-Play Debates</li>
+                            <li><i className="fas fa-circle"></i> Reflective Close-Outs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div className="cta-buttons">
+                <a href="#" className="cta-btn">ACCELERATE DECISIONS —</a>
+                <a href="#" className="cta-btn">BOOK A WORKSHOP</a>
+            </div>
+
+          </div>
+
+          {/* Footer */}
+          <footer id="contact">
+            <h2>Contact Us</h2>
+            <div className="contact-form">
+              <form>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your Email" />
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+            <p><span className="email">Email: kiranlingaraj@eloqaura.com</span> | <span className="phone">Phone: +91 78240 05002</span></p>
+            <div className="social-media">
+              <a href="#"><i className="fab fa-twitter"></i></a>
+              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#"><i className="fab fa-facebook-f"></i></a>
+            </div>
+            <p><span className="copyright">&copy; {new Date().getFullYear()} Eloqaura Communication Training</span> | <span className="back-to-top"><a href="#home">Back to Top</a></span></p>
+          </footer>
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

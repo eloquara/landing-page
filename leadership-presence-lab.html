@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Presence Lab - Eloqaura</title>
+  <link rel="icon" href="logo.png" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0c0038;
+      color: #FFFFFF;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .main-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .main-header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: #FFD700;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .main-header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #FFD700;
+      margin-bottom: 4rem;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .grid-column {
+      border: 1px solid #FFD700;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    .grid-column h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 1.5rem;
+    }
+    .grid-column p, .grid-column li {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #F5F5F5;
+    }
+     .grid-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .grid-column li {
+        color: #FFD700;
+    }
+    .testimonial-text {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+    .cta-button {
+      display: inline-block;
+      border: 1px solid #FFD700;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #FFD700;
+      color: #0c0038;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const App = () => {
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+      const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      };
+
+      return (
+        <>
+          {/* Navigation */}
+          <nav>
+            <div className="brand">
+              <a href="index.html">
+                <img src="logo.png" alt="Eloqaura Logo" style={{ width: '55px', height: '55px' }} />
+              </a>
+              <p className="brand-name">ELOQAURA</p>
+            </div>
+            <div>
+              <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+              </div>
+              <div className="hamburger-menu" onClick={toggleMobileMenu}>
+                <i className="fas fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+
+          <div className="main-container">
+            <div className="main-header">
+              <h1>LEADERSHIP PRESENCE LAB™</h1>
+              <h2>Craft gravitas, charisma, and clarity that command trust and respect</h2>
+            </div>
+
+            <div className="content-grid">
+              <div className="grid-column">
+                <h3>WHAT YOU'LL EXPERIENCE</h3>
+                <p><strong>Presence Amplification Coaching</strong> – Techniques to project confidence before you speak</p>
+                <p><strong>Charisma Framework™</strong> – Blend storytelling, tone, and gestures to inspire connection</p>
+                <p><strong>Gravitas Training</strong> – Balance authority, and authenticity to be taken seriously at every level</p>
+              </div>
+              <div className="grid-column">
+                <h3>AFTER</h3>
+                <ul>
+                  <li>Poised, confident, and commanding presence</li>
+                  <li>Messages that stick in memory</li>
+                  <li>Calm authority that earns attention and respect</li>
+                  <li>Authentic charisma that builds influence naturally</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="testimonial-text">
+              A senior manager who once struggled to gain recognition in cross-functional meetings became the go-to voice for clarity and confidence – trusted by peers and respected by executives.
+            </p>
+
+            <a href="#" className="cta-button">Step Into Your Presence – Book a Lab Session</a>
+          </div>
+
+          {/* Footer */}
+          <footer id="contact">
+            <h2>Contact Us</h2>
+            <div className="contact-form">
+              <form>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your Email" />
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+            <p><span className="email">Email: kiranlingaraj@eloqaura.com</span> | <span className="phone">Phone: +91 78240 05002</span></p>
+            <div className="social-media">
+              <a href="#"><i className="fab fa-twitter"></i></a>
+              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#"><i className="fab fa-facebook-f"></i></a>
+            </div>
+            <p><span className="copyright">&copy; {new Date().getFullYear()} Eloqaura Communication Training</span> | <span className="back-to-top"><a href="#home">Back to Top</a></span></p>
+          </footer>
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Listening Lab - Eloqaura</title>
+  <link rel="icon" href="logo.png" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0c0038;
+      color: #FFFFFF;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .main-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .main-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .main-header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: #FFD700;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .main-header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #FFD700;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .grid-column {
+      border: 1px solid #FFD700;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    .grid-column h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 1.5rem;
+    }
+    .grid-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .grid-column li {
+      display: flex;
+      align-items: flex-start;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .grid-column i {
+      margin-right: 1rem;
+      margin-top: 4px;
+    }
+    .impact-story {
+      margin-bottom: 3rem;
+    }
+    .impact-story h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    .experiential-edge {
+        margin-bottom: 3rem;
+    }
+    .experiential-edge h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    .experiential-edge ul {
+        list-style: none;
+        padding: 0;
+    }
+    .experiential-edge li {
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .experiential-edge i {
+        margin-right: 1rem;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      border: 1px solid #FFD700;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      background-color: #FFD700;
+      color: #0c0038;
+      text-decoration: none;
+      font-size: 1.1rem;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .cta-btn:hover {
+      background-color: transparent;
+      color: #FFD700;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const App = () => {
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+      const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      };
+
+      return (
+        <>
+          {/* Navigation */}
+          <nav>
+            <div className="brand">
+              <a href="index.html">
+                <img src="logo.png" alt="Eloqaura Logo" style={{ width: '55px', height: '55px' }} />
+              </a>
+              <p className="brand-name">ELOQAURA</p>
+            </div>
+            <div>
+              <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="index.html#contact">Contact</a>
+              </div>
+              <div className="hamburger-menu" onClick={toggleMobileMenu}>
+                <i className="fas fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+
+          <div className="main-container">
+            <div className="main-header">
+              <h1>THE LISTENING LAB™</h1>
+              <h2>Because listening is more than hearing—it's leadership in action.</h2>
+            </div>
+
+            <div className="content-grid">
+              <div className="grid-column">
+                <h3>WHAT YOU'LL EXPERIENCE</h3>
+                <ul>
+                  <li><i className="fas fa-check-square"></i> Active Acknowledgment Drills</li>
+                  <li><i className="fas fa-random"></i> Interrupt & Reframe Simulations</li>
+                  <li><i className="fas fa-smile"></i> Empathy Amplifiers™</li>
+                  <li><i className="fas fa-search"></i> Signal Spotting Exercises</li>
+                </ul>
+              </div>
+              <div className="grid-column">
+                <h3>BEFORE</h3>
+                <p>Conversations where everyone feels acknowledged</p>
+                <p>Higher trust, stronger team culture</p>
+                <p>Meetings that run faster, with greater clarity</p>
+              </div>
+              <div className="grid-column">
+                <h3>AFTER</h3>
+                <p>Conversations where everyone feels acknowledged</p>
+                <p>Fewer conflicts, more constructive collaboration</p>
+                <p>Higher trust, stronger team culture</p>
+              </div>
+            </div>
+
+            <div className="impact-story">
+                <h3>IMPACT STORY (Case Vignette):</h3>
+                <p>A product team struggling with missed deadlines discovered that poor listening—half The Listening Lab™—they adopted acknowledgment protocols that cut misunderstandings by half and boosted delivery confidence across the team.</p>
+            </div>
+
+            <div className="experiential-edge">
+                <h3>EXPERIENTIAL EDGE</h3>
+                <ul>
+                    <li><i className="fas fa-comments"></i> Peer-to-Peer Feedback Cards</li>
+                    <li><i className="fas fa-users"></i> Real-Time Roleplays</li>
+                    <li><i className="fas fa-dot-circle"></i> Debrief Circles</li>
+                </ul>
+            </div>
+
+            <div className="cta-buttons">
+                <a href="#" className="cta-btn">STRENGTHEN TEAM TRUST—JOIN THE LISTENING LAB™</a>
+                <a href="#" className="cta-btn">BOOK A WORKSHOP FOR YOUR TEAM</a>
+            </div>
+
+          </div>
+
+          {/* Footer */}
+          <footer id="contact">
+            <h2>Contact Us</h2>
+            <div className="contact-form">
+              <form>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your Email" />
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+            <p><span className="email">Email: kiranlingaraj@eloqaura.com</span> | <span className="phone">Phone: +91 78240 05002</span></p>
+            <div className="social-media">
+              <a href="#"><i className="fab fa-twitter"></i></a>
+              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#"><i className="fab fa-facebook-f"></i></a>
+            </div>
+            <p><span className="copyright">&copy; {new Date().getFullYear()} Eloqaura Communication Training</span> | <span className="back-to-top"><a href="#home">Back to Top</a></span></p>
+          </footer>
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
